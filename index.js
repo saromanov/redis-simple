@@ -43,7 +43,7 @@ module.exports = function(){
             }
 
             if(field !== undefined){
-                client.hdel(key, field, function(err, reply){
+                client.hdel(field, key, function(err, reply){
                     cb(err, reply);
                 });
             } else {
