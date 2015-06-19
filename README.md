@@ -1,8 +1,9 @@
-# redis-simple
+# redis-simple [![Build Status](https://travis-ci.org/saromanov/redis-simple.svg?branch=v0.0.1)](https://travis-ci.org/saromanov/redis-simple)
 Very simple client for redis. Based on [node_redis](https://github.com/mranney/node_redis)
 This client, contains only three commands: ```set```, ```get``` and ```del``` for strings and hashes.
 
 ## Install
+``` npm install redis-simple ```
 
 ## Usage
 
