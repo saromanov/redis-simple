@@ -23,5 +23,22 @@ simple.set(key, value, function(err, reply){
 });
 ```
 
+Example with hashes
+```javascript
+var redissimple = require('redis-simple');
+var simple = redissimple();
+var key = "foo";
+var field = "field";
+var value = "value";
+
+simple.set(key, value, field, function(err, reply){
+    simple.get(key, field, function(err, reply){
+        simple.del(key, field, function(errdel, replydel){
+            console.log(reply, replydel);
+            simple.quit();
+        });
+    });
+});
+```
 ## License
 MIT
