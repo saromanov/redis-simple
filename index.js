@@ -3,12 +3,20 @@ var client = redis.createClient();
 
 module.exports = function(){
     return {
-        set: function(key, value, hash){
+        set: function(key, value, hash, cb){
+            if(typeof hash === 'function'){
+                cb = hash;
+                hash = undefined;
+            }
             if(hash !== undefined){
-                client.hset(hash, key, value, redis.print);
+                client.hset(hash, key, value, function(err, reply){
+                    cb(err, reply);  
+                });
             }
             else {
-                client.set(key, value, redis.print);
+                client.set(key, value, function(err, reply){
+                    cb(err, reply);
+                });
             }
         },
 
