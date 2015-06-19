@@ -6,14 +6,20 @@ This client, contains only three commands: ```set```, ```get``` and ```del```.
 
 ## Usage
 
+Example with strings
 ```javascript
 var redissimple = require('redis-simple');
+var key = "A";
+var value = "B";
 var simple = redissimple();
-simple.get("A", function(err, reply){
-    simple.del("A", function(err, rep){
+
+simple.set(key, value, function(err, reply){
+    simple.get("A", function(err, reply){
+       simple.del("A", function(err, rep){
         console.log(rep);
         simple.quit();
-    });
+      });
+   });
 });
 ```
 
