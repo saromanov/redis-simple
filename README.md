@@ -1,6 +1,6 @@
 # redis-simple
 Very simple client for redis. Based on [node_redis](https://github.com/mranney/node_redis)
-This client, contains only three commands: ```set```, ```get``` and ```del```.
+This client, contains only three commands: ```set```, ```get``` and ```del``` for strings and hashes.
 
 ## Install
 
