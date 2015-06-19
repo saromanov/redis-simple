@@ -28,6 +28,23 @@ module.exports = function(){
             }
         },
 
+        del: function(key, field, cb){
+            if (typeof field === 'function'){
+                cb = field;
+                field = undefined;
+            }
+
+            if(field !== undefined){
+                client.hdel(key, field, function(err, reply){
+                    cb(err, reply);
+                });
+            } else {
+                client.del(key, function(err, reply){
+                    cb(err, reply);
+                });
+            }
+        },
+
         quit: function(){
             client.quit();
         }
