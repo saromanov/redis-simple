@@ -1,2 +1,21 @@
 # redis-simple
-# redis-simple
+Very simple client for redis. Based on [node_redis](https://github.com/mranney/node_redis)
+This client, contains only three commands: ```set```, ```get``` and ```del```.
+
+## Install
+
+## Usage
+
+```javascript
+var redissimple = require('redis-simple');
+var simple = redissimple();
+simple.get("A", function(err, reply){
+    simple.del("A", function(err, rep){
+        console.log(rep);
+        simple.quit();
+    });
+});
+```
+
+## License
+MIT
